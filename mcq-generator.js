@@ -70,7 +70,7 @@ ${it.explanation?`<p><strong>Explanation:</strong> ${it.explanation}</p>`:""}
 
 function copyOutput(){
   navigator.clipboard.writeText(document.getElementById('output').textContent);
-  alert("Copied HTML! Paste into Blogger post.");
+  alert("Copied HTML! Paste into your File.");
 }
 
 function showhide(num){
@@ -82,3 +82,4 @@ function showworkspace(num){
   const ws=document.getElementById("workspace"+num);
   ws.innerHTML = ws.innerHTML ? "" : "<textarea style='width:100%;height:80px'></textarea>";
 }
+
