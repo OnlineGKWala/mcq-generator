@@ -82,3 +82,15 @@ function showworkspace(num){
   const ws=document.getElementById("workspace"+num);
   ws.innerHTML = ws.innerHTML ? "" : "<textarea style='width:100%;height:80px'></textarea>";
 }
+
+// ✅ Ctrl+A inside output → only select output
+document.getElementById("output").addEventListener("keydown", function (e) {
+  if (e.ctrlKey && e.key === "a") {
+    e.preventDefault(); // default page-select ko rok do
+    let range = document.createRange();
+    range.selectNodeContents(this);
+    let sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+});
