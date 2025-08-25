@@ -83,6 +83,15 @@ function showworkspace(num){
   ws.innerHTML = ws.innerHTML ? "" : "<textarea style='width:100%;height:80px'></textarea>";
 }
 
+// ✅ Output click → auto select all
+document.getElementById("output").addEventListener("click", function () {
+  let range = document.createRange();
+  range.selectNodeContents(this);
+  let sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+});
+
 // ✅ Ctrl+A inside output → only select output
 document.getElementById("output").addEventListener("keydown", function (e) {
   if (e.ctrlKey && e.key === "a") {
